@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ButtonView: View {
-    @ObservedObject var timer = TimeCounter()
+    @Binding var timer: TimeCounter
     @Binding var buttonText: String
     
    
@@ -31,6 +31,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(timer: TimeCounter(), buttonText: .constant(""))
+        ButtonView(timer: .constant(TimeCounter()), buttonText: .constant(""))
     }
 }
